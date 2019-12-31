@@ -12,6 +12,10 @@ const getWords = async () => {
 
     const words = (await wordsResp.json());
 
+    if (words.length) {
+        document.querySelector('.overlay').classList.remove('overlay');
+    }
+
     console.log('words', words.length);
     allWords = words;
     getRandomWords();
@@ -36,7 +40,7 @@ const getRandomWords = (length = 4) => {
 
 typer.addEventListener('input', (e) => {
     console.log(e.srcElement.value, currentWord);
-    const typedWord = e.srcElement.value;
+    const typedWord = e.srcElement.value.toLowerCase();
     if (typedWord === currentWord) {
         const newWord = getRandomWord();
         currentWord = currentRandomWords[currentIndex + 1];

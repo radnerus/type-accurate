@@ -58,10 +58,18 @@ button:focus {
     }
 
     .notification-area {
+        height: 5vh;
         width: 90%;
         margin: auto;
         margin-bottom: 30px;
-        .pull-right {
+        text-align: center;
+        font-family: 'PT Sans Narrow', sans-serif;
+
+        .left {
+            float: left;
+        }
+
+        .right {
             float: right;
         }
     }
@@ -132,36 +140,25 @@ button:focus {
     }
 }
 
-// @keyframes lower_head {
-//     from {
-//         color: yellow
-//     }
+@media only screen and (max-width: 600px) {
+    .notification-area {
+        .left, .right {
+            display: none;
+        }
+    }
 
-//     to {
-//         color: black;
-//     }
-// }
+    .center-text {
+        height: 50vh !important;
+        align-items: flex-end !important;
+        padding-bottom: 40px;;
+        .words:not(.active) {
+            display: none;
+        }
 
-// @keyframes shake {
+        .words.active {
+            font-size: 7vw !important;
+            word-break: break-all;
+        }
 
-//     10%,
-//     90% {
-//         transform: translate3d(-1px, 0, 0);
-//     }
-
-//     20%,
-//     80% {
-//         transform: translate3d(2px, 0, 0);
-//     }
-
-//     30%,
-//     50%,
-//     70% {
-//         transform: translate3d(-4px, 0, 0);
-//     }
-
-//     40%,
-//     60% {
-//         transform: translate3d(4px, 0, 0);
-//     }
-// }
+    }
+}

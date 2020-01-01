@@ -65,12 +65,19 @@ button:focus {
 }
 
 .container .notification-area {
+  height: 5vh;
   width: 90%;
   margin: auto;
   margin-bottom: 30px;
+  text-align: center;
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 
-.container .notification-area .pull-right {
+.container .notification-area .left {
+  float: left;
+}
+
+.container .notification-area .right {
   float: right;
 }
 
@@ -143,6 +150,26 @@ button:focus {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .notification-area .left, .notification-area .right {
+    display: none;
+  }
+  .center-text {
+    height: 50vh !important;
+    -webkit-box-align: end !important;
+        -ms-flex-align: end !important;
+            align-items: flex-end !important;
+    padding-bottom: 40px;
+  }
+  .center-text .words:not(.active) {
+    display: none;
+  }
+  .center-text .words.active {
+    font-size: 7vw !important;
+    word-break: break-all;
   }
 }
 /*# sourceMappingURL=styles.css.map */

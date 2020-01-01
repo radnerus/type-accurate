@@ -104,7 +104,7 @@ const startTimer = () => {
 typer.addEventListener('input', (e) => {
     console.log(e.srcElement.value, currentWord);
     const typedWord = e.srcElement.value.toLowerCase();
-    isInsert = e.inputType === 'insertText';
+    isInsert = e.inputType === 'insertText' || e.inputType === 'insertCompositionText';
     alert(e.inputType);
     if (isInsert && !timeStarted) {
         startTimer();

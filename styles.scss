@@ -30,6 +30,121 @@ button:focus {
         }
     }
 
+    .switch {
+        height: 5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'PT Sans Narrow', sans-serif;
+        text-transform: uppercase;
+        span.switcher {
+            position: relative;
+
+            width: 10rem;
+            height: 2.5rem;
+            border-radius: 1.25rem;
+            margin: 20px 0;
+
+            input {
+                appearance: none;
+
+                position: relative;
+
+                width: 10rem;
+                height: 2.5rem;
+                border-radius: 1.25rem;
+
+                background-color: black;
+                outline: none;
+
+                font-family: 'Oswald', sans-serif;
+
+                &:before,
+                &:after {
+                    z-index: 2;
+
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    color: white;
+                }
+
+                &:before {
+                    content: 'ARCADE';
+                    left: 1rem;
+                }
+
+                &:after {
+                    content: 'TIME';
+                    right: 1rem;
+                }
+            }
+
+            label {
+                z-index: 1;
+                position: absolute;
+                top: 0.5rem;
+                bottom: 0.5rem;
+
+                border-radius: 1rem;
+            }
+
+            &.switcher-1 {
+                input {
+                    transition: .25s -.1s;
+
+                    &:checked {
+                        background-color: white;
+
+                        &:before {
+                            color: white;
+                            transition: color .5s .2s;
+                        }
+
+                        &:after {
+                            color: grey;
+                            transition: color .5s;
+                        }
+
+                        &+label {
+                            left: 0.5rem;
+                            right: 5rem;
+
+                            background: black;
+
+                            transition: left .5s, right .4s .2s;
+                        }
+                    }
+
+                    &:not(:checked) {
+                        background: black;
+                        transition: background .5s -.1s;
+
+                        &:before {
+                            color: grey;
+                            transition: color .5s;
+                        }
+
+                        &:after {
+                            color: black;
+                            transition: color .5s .2s;
+                        }
+
+                        &+label {
+                            left: 5rem;
+                            right: 0.5rem;
+
+                            background: white;
+
+                            transition: left .4s .2s, right .5s, background .35s -.1s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .center-text {
         height: 70vh;
         display: flex;
@@ -146,7 +261,9 @@ button:focus {
 
 @media only screen and (max-width: 600px) {
     .notification-area {
-        .left, .right {
+
+        .left,
+        .right {
             display: none;
         }
     }
@@ -154,7 +271,9 @@ button:focus {
     .center-text {
         height: 50vh !important;
         align-items: flex-end !important;
-        padding-bottom: 40px;;
+        padding-bottom: 40px;
+        ;
+
         .words:not(.active) {
             display: none;
         }

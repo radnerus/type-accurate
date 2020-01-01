@@ -6,6 +6,7 @@ const charactersMissSpelledEle = document.querySelector('#error-chars');
 const timeEle = document.querySelector('#time-taken');
 const notifications = document.querySelector('#notifications');
 const rules = document.querySelector('#rules');
+const arcadeTime = document.querySelector('#arcade-time');
 
 const debugEle = document.querySelector('#debug');
 
@@ -21,6 +22,7 @@ let isInsert = null;
 let displayedWords = 4;
 let timeTaken = 0;
 let timeStarted = false;
+let isArcade = true;
 
 let wordsToBeTested = 10;
 
@@ -155,3 +157,7 @@ typer.addEventListener('input', (e) => {
 })
 
 
+arcadeTime.addEventListener('input', (e) => {
+    isArcade = e.srcElement.checked;
+    rules.textContent = isArcade ? 'Type the 10 displayed random words as soon as possible with minimal errors.' : 'Time challenge is under construction';
+})

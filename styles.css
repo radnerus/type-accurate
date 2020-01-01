@@ -27,6 +27,10 @@ button:focus {
   height: 5vh;
 }
 
+.container .header img {
+  height: 2rem;
+}
+
 .container .center-text {
   height: 70vh;
   display: -webkit-box;

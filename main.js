@@ -7,6 +7,8 @@ const timeEle = document.querySelector('#time-taken');
 const notifications = document.querySelector('#notifications');
 const rules = document.querySelector('#rules');
 
+const debugEle = document.querySelector('#debug');
+
 notifications.style.visibility = 'hidden';
 
 let allWords = [];
@@ -105,7 +107,6 @@ typer.addEventListener('input', (e) => {
     console.log(e.srcElement.value, currentWord);
     const typedWord = e.srcElement.value.toLowerCase();
     isInsert = e.inputType === 'insertText' || e.inputType === 'insertCompositionText';
-    alert(e.inputType);
     if (isInsert && !timeStarted) {
         startTimer();
     }

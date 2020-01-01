@@ -33,21 +33,33 @@ const showNotificationArea = () => {
     rules.style.display = 'none';
 }
 
-const getWords = async () => {
-    const wordsResp = await fetch('words_array.json')
+const getWordsInitial = async () => {
+    const wordsResp = await fetch('words_array_six_letters.json')
 
     const words = (await wordsResp.json());
 
     if (words.length) {
         document.querySelector('.overlay').classList.remove('overlay');
         typer.focus();
+        getWords();
     }
 
     allWords = words;
     getRandomWords();
+    console.log('all loaded', allWords.length, allWords[allWords.length - 1]);
 }
 
-getWords();
+const getWords = async () => {
+    const wordsResp = await fetch('words_array.json')
+
+    const words = (await wordsResp.json());
+
+    allWords = [...allWords, ...words];
+
+    console.log('all loaded', allWords.length, allWords[allWords.length - 1]);
+}
+
+getWordsInitial();
 
 const getRandomWord = () => {
     return allWords[Math.floor(Math.random() * allWords.length)];

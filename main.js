@@ -9,7 +9,7 @@ const rules = document.querySelector('#rules');
 
 const debugEle = document.querySelector('#debug');
 
-notifications.style.visibility = 'hidden';
+notifications.style.display = 'none';
 
 let allWords = [];
 let currentRandomWords = [];
@@ -29,7 +29,7 @@ charactersMissSpelledEle.textContent = charactersMissSpelled;
 timeEle.textContent = timeTaken;
 
 const showNotificationArea = () => {
-    notifications.style.visibility = 'visible';
+    notifications.style.display = 'block';
     rules.style.display = 'none';
 }
 
@@ -46,7 +46,6 @@ const getWordsInitial = async () => {
 
     allWords = words;
     getRandomWords();
-    console.log('all loaded', allWords.length, allWords[allWords.length - 1]);
 }
 
 const getWords = async () => {
@@ -56,7 +55,6 @@ const getWords = async () => {
 
     allWords = [...allWords, ...words];
 
-    console.log('all loaded', allWords.length, allWords[allWords.length - 1]);
 }
 
 getWordsInitial();
@@ -116,7 +114,6 @@ const startTimer = () => {
 //Event Listeners
 
 typer.addEventListener('input', (e) => {
-    console.log(e.srcElement.value, currentWord);
     const typedWord = e.srcElement.value.toLowerCase();
     isInsert = e.inputType === 'insertText' || e.inputType === 'insertCompositionText';
     if (isInsert && !timeStarted) {

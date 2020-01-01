@@ -15,7 +15,7 @@ button:focus {
 }
 
 .container {
-  width: 80%;
+  max-width: 80%;
   margin: auto;
 }
 
@@ -24,6 +24,7 @@ button:focus {
   font-size: 2rem;
   margin-top: 30px;
   font-family: 'Zilla Slab', serif;
+  height: 5vh;
 }
 
 .container .center-text {
@@ -63,7 +64,18 @@ button:focus {
   color: white;
 }
 
+.container .notification-area {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.container .notification-area .pull-right {
+  float: right;
+}
+
 .container .typing-area {
+  height: 20vh;
   width: 90%;
   margin: auto;
 }
@@ -131,72 +143,6 @@ button:focus {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes lower_head {
-  from {
-    color: yellow;
-  }
-  to {
-    color: black;
-  }
-}
-
-@keyframes lower_head {
-  from {
-    color: yellow;
-  }
-  to {
-    color: black;
-  }
-}
-
-@-webkit-keyframes shake {
-  10%,
-  90% {
-    -webkit-transform: translate3d(-1px, 0, 0);
-            transform: translate3d(-1px, 0, 0);
-  }
-  20%,
-  80% {
-    -webkit-transform: translate3d(2px, 0, 0);
-            transform: translate3d(2px, 0, 0);
-  }
-  30%,
-  50%,
-  70% {
-    -webkit-transform: translate3d(-4px, 0, 0);
-            transform: translate3d(-4px, 0, 0);
-  }
-  40%,
-  60% {
-    -webkit-transform: translate3d(4px, 0, 0);
-            transform: translate3d(4px, 0, 0);
-  }
-}
-
-@keyframes shake {
-  10%,
-  90% {
-    -webkit-transform: translate3d(-1px, 0, 0);
-            transform: translate3d(-1px, 0, 0);
-  }
-  20%,
-  80% {
-    -webkit-transform: translate3d(2px, 0, 0);
-            transform: translate3d(2px, 0, 0);
-  }
-  30%,
-  50%,
-  70% {
-    -webkit-transform: translate3d(-4px, 0, 0);
-            transform: translate3d(-4px, 0, 0);
-  }
-  40%,
-  60% {
-    -webkit-transform: translate3d(4px, 0, 0);
-            transform: translate3d(4px, 0, 0);
   }
 }
 /*# sourceMappingURL=styles.css.map */
